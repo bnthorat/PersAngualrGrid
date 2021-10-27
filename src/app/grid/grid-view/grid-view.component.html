@@ -1,0 +1,45 @@
+<!-- <button (click)="open()">LoadData</button> -->
+<input [(ngModel)]="searchText" placeholder="Search">
+<table class="table">
+    <tr class="tableHeader">
+        <td><input type="checkbox"></td>
+        <td  class="pointer" (click)="sort('id')">Item ID</td>
+        <td>User Id</td>
+        <!-- <td [appSort]="pagedItems" data-order="desc" data-name="title" scope="col">Actual Price</td> -->
+        <td class="pointer" (click)="sort('title')">Description</td>
+        <td>Completed</td>
+    </tr>
+    <tbody>
+        <tr *ngFor="let item of pagedItems  | tableFilter: {title: searchText, id:searchText,  completed: searchText};">
+        <td><input type="checkbox"></td>
+        <td>{{item.id}}</td>
+        <td>{{item.userId}}</td>
+        <td >{{item.title}}</td>
+        <td class="pointer" (click)="sort('completed')">{{item.completed}}</td>
+    </tr>
+    </tbody>
+    
+    <tr>
+        <td>
+           
+        </td>
+    </tr>
+</table>
+<!-- <div class="container"></div> -->
+    <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+        <li [ngClass]="{disabled:pager.currentPage === 1}">
+            <a (click)="setPage(1)">First</a>
+        </li>
+        <li [ngClass]="{disabled:pager.currentPage === 1}">
+            <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+        </li>
+        <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+            <a (click)="setPage(page)">{{page}}</a>
+        </li>
+        <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+            <a (click)="setPage(pager.currentPage + 1)">Next</a>
+        </li>
+        <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+            <a (click)="setPage(pager.totalPages)">Last</a>
+        </li>
+    </ul>

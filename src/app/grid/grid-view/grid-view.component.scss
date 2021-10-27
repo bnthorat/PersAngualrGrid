@@ -1,0 +1,67 @@
+tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+    border: 1px solid rgba(26, 18, 18, 0.3);
+}
+
+.tableHeader{
+    font-weight: bold;
+   // background-color: rgb(210, 240, 240);
+    background-color: #95A5A6;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+
+}
+.container {
+    background: #dde1e7;
+    padding: 25px;
+    border-radius: 3px;
+    
+  }
+  .pagination {
+    display: flex;
+    list-style: none;
+    text-align: center;
+  }
+  .pagination li {
+    flex: .30;
+    margin: 0px 1px;
+    background: #dde1e7;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  .pagination li a {
+    font-size: 12px;
+    text-decoration: none;
+    color: #4d3252;
+    height: 35px;
+    width: 55px;
+    // display: block;
+    line-height: 25px;
+    cursor: pointer;
+  }
+  .pointer{
+    cursor: pointer;
+  }
+  .pagination li:first-child a {
+    width: 120px;
+    cursor: pointer;
+  }
+  .pagination li:last-child a {
+    width: 100px;
+    cursor: pointer;
+  }
+  .pagination li.active {
+    box-shadow: inset -3px -3px 7px #1a32bb6e,
+      inset 3px 3px 5px rgba(16, 84, 202, 0.288);
+  }
+  .pagination li.active a {
+    font-size: 17px;
+    color: #6f6cde;
+  }
+  .pagination li:first-child {
+    margin: 0 5px 0 0;
+  }
+  .pagination li:last-child {
+    margin: 0 0 0 5px;
+  }
